@@ -3,16 +3,18 @@ package bank_access;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-import mware_lib.Sender;
+import mware_lib.Kommunikationsmodul.*;
 
 public class AccountStub extends AccountImplBase {
 
 	private String ip;		//IP Adresse an die gesendet werden soll
 	private int port;		//Port an den gesendet werden soll
+	private Object objRef;
 	
-	public AccountStub(String ip, int port) {
+	public AccountStub(String ip, int port, Object objRef) {
 		this.ip = ip;
 		this.port = port;
+		this.objRef = objRef;
 	}
 	
 	@Override
@@ -32,17 +34,21 @@ public class AccountStub extends AccountImplBase {
 						sender.close();
 						return;
 					}else{
-						//TODO: Nicht erwartetet Ergebnis! Exception werfen
+						sender.close();
+						throw new RuntimeException("Exception: Falscher Datentyp");
 					}
-					break;
 				case "exception":
+					sender.close();
 					//TODO: Herausfinden welche Exception geworfen wurde
 					break;
+				default:
+					sender.close();
+					throw new RuntimeException("Exception: Falscher Datentyp");	//Unbekannter Fehler
 			}
 		} catch (UnknownHostException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port + " herstellen.");	
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port +" herstellen.");
 		}
 	}
 
@@ -62,17 +68,13 @@ public class AccountStub extends AccountImplBase {
 					if(!receive[1].equals("void")) {
 						return Double.parseDouble(receive[1]);
 					}else{
-						//TODO: Falscher Dateityp EXCEPTION TIME!
-					}
+						throw new RuntimeException("Exception: Falscher Datentyp");					}
 			}
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port + " herstellen.");	
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port + " herstellen.");
+		}		
 		//TODO
 		throw new RuntimeException("Unkown Error");
 	}

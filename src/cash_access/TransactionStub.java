@@ -3,7 +3,7 @@ package cash_access;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-import mware_lib.Sender;
+import mware_lib.Kommunikationsmodul.*;
 
 public class TransactionStub extends TransactionImplBase {
 
@@ -40,9 +40,9 @@ public class TransactionStub extends TransactionImplBase {
 					break;
 			}
 		} catch (UnknownHostException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port + " herstellen.");	
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port + " herstellen.");
 		}
 	}
 
@@ -71,9 +71,9 @@ public class TransactionStub extends TransactionImplBase {
 					break;
 			}
 		} catch (UnknownHostException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port + " herstellen.");	
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port + " herstellen.");
 		}
 	}
 
@@ -94,14 +94,11 @@ public class TransactionStub extends TransactionImplBase {
 						return Double.parseDouble(receive[1]);
 					}else{
 						//TODO: Falscher Dateityp EXCEPTION TIME!
-					}
-			}
+					}				}	
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu "+ ip+ " :"+ port+ "  herstellen.");	
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu "+ ip+ " :"+ port+ "  herstellen.");
 		}
 		
 		//TODO

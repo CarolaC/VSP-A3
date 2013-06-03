@@ -1,4 +1,4 @@
-package mware_lib;
+package mware_lib.Kommunikationsmodul;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;

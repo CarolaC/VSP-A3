@@ -7,7 +7,7 @@ public abstract class AccountImplBase {
 	public abstract double getBalance();
 
 	public static AccountImplBase narrowCast(Object rawObjectRef) {
-		// TODO
+		return new AccountStub(rawObjRef);
 	}
 
 }

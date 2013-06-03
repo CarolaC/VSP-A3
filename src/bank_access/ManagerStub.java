@@ -3,7 +3,7 @@ package bank_access;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-import mware_lib.Sender;
+import mware_lib.Kommunikationsmodul.*;
 
 public class ManagerStub extends ManagerImplBase{
 
@@ -40,9 +40,9 @@ public class ManagerStub extends ManagerImplBase{
 					throw new RuntimeException("Unkown Error");
 			}
 		} catch (UnknownHostException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu "+ip+":"+port+" herstellen.");	
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Exception: Konnte keine Verbindung zu "+ip+":"+port+" herstellen.");
 		}
 		
 		//TODO
