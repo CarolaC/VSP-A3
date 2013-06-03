@@ -1,5 +1,7 @@
 package bank_access;
 
-public class AccountSkeleton {
+import mware_lib.Skeleton;
+
+public class AccountSkeleton implements Skeleton {
 
 }

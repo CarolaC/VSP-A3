@@ -1,5 +1,7 @@
 package cash_access;
 
-public class TransactionSkeleton {
+import mware_lib.Skeleton;
+
+public class TransactionSkeleton implements Skeleton {
 
 }
