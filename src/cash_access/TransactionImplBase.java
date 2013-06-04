@@ -1,7 +1,5 @@
 package cash_access;
 
-import bank_access.AccountSkeleton;
-import bank_access.AccountStub;
 import mware_lib.IImplBase;
 
 public abstract class TransactionImplBase implements IImplBase{

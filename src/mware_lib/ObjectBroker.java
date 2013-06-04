@@ -6,10 +6,12 @@ public class ObjectBroker {
 	
 	private String serviceHost;
 	private int listenPort;
+	private Referenzmodul referenzmodul;
 	
 	private ObjectBroker(String serviceHost, int listenPort) {
 		this.serviceHost = serviceHost;
 		this.listenPort = listenPort;
+		this.referenzmodul = new Referenzmodul();
 	}
 
 	// Das hier zurückgelieferte Objekt soll der zentrale Einstiegspunkt
@@ -22,7 +24,7 @@ public class ObjectBroker {
 	
 	// Liefert den Namensdienst (Stellvetreterobjekt).
 	public Nameservice getNameService() {
-		return new NameserviceStub(serviceHost, listenPort);
+		return new NameserviceStub(serviceHost, listenPort, referenzmodul);
 	}
 
 	// Beendet die Benutzung der Middleware in dieser Anwendung.

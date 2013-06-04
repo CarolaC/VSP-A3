@@ -2,7 +2,6 @@ package mware_lib.Kommunikationsmodul;
 
 import java.io.IOException;
 
-import mware_lib.ObjectBroker;
 import mware_lib.Referenzmodul;
 import mware_lib.Skeleton;
 
