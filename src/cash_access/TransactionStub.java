@@ -9,10 +9,12 @@ public class TransactionStub extends TransactionImplBase {
 
 	private String ip;
 	private int port;
+	private Object objRef;
 	
-	public TransactionStub(String ip, int port) {
+	public TransactionStub(String ip, int port, Object objRef) {
 		this.ip = ip;
 		this.port = port;
+		this.objRef = objRef;
 	}
 	
 	@Override

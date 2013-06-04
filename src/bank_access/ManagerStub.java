@@ -9,10 +9,12 @@ public class ManagerStub extends ManagerImplBase{
 
 	private String ip;
 	private int port;
+	private Object objRef;
 	
-	public ManagerStub(String ip, int port) {
+	public ManagerStub(String ip, int port, Object objRef) {
 		this.ip = ip;
 		this.port = port;
+		this.objRef = objRef;
 	}
 	
 	@Override

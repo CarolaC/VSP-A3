@@ -1,6 +1,7 @@
 package cash_access;
 
 import bank_access.AccountSkeleton;
+import bank_access.AccountStub;
 import mware_lib.IImplBase;
 
 public abstract class TransactionImplBase implements IImplBase{
@@ -12,8 +13,11 @@ public abstract class TransactionImplBase implements IImplBase{
 	public abstract double getBalance(String accountID);
 
 	public static TransactionImplBase narrowCast(Object rawObjectRef) {
-		// TODO
-		return null;
+		String reference = (String) rawObjectRef;
+        String[] split = reference.split(":");
+        String ip = split[0];
+        int port = Integer.parseInt(split[1]);
+        return new TransactionStub(ip, port, reference);
 	}
 
 	@Override
