@@ -20,7 +20,7 @@ public class ManagerStub extends ManagerImplBase{
 		//Erzeuge einen neuen Sender
 		try {
 			//Senden des Methodenaufrufs
-			Sender sender = new Sender(this.ip, this.port);
+			Client sender = new Client(this.ip, this.port);
 			sender.send("method:createAccount:"+owner+":"+branch+"\n");
 			
 			String receive[] = sender.receive().split(":");

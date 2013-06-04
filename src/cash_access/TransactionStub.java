@@ -20,7 +20,7 @@ public class TransactionStub extends TransactionImplBase {
 		//Erzeuge einen neuen Sender
 		try {
 			//Senden des Methodenaufrufs
-			Sender sender = new Sender(this.ip, this.port);
+			Client sender = new Client(this.ip, this.port);
 			sender.send("method:deposit:"+accountID+":"+amount+"\n");
 			
 			String receive[] = sender.receive().split(":");
@@ -61,7 +61,7 @@ public class TransactionStub extends TransactionImplBase {
 		//Erzeuge einen neuen Sender
 		try {
 			//Senden des Methodenaufrufs
-			Sender sender = new Sender(this.ip, this.port);
+			Client sender = new Client(this.ip, this.port);
 			sender.send("method:withdraw:"+accountID+":"+amount+"\n");
 			
 			String receive[] = sender.receive().split(":");
@@ -102,7 +102,7 @@ public class TransactionStub extends TransactionImplBase {
 	@Override
 	public double getBalance(String accountID) {
 		try {
-			Sender sender = new Sender(this.ip, this.port);
+			Client sender = new Client(this.ip, this.port);
 			sender.send("method:getBalance");
 			
 			String receive[] = sender.receive().split(":");

@@ -7,21 +7,21 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class Sender {
+public class Client {
 
-	private Socket sender;
+	private Socket socket;
 	private BufferedReader in;
 	private BufferedOutputStream out;
 	
-	public Sender(String ip, int port) throws UnknownHostException, IOException {
+	public Client(String ip, int port) throws UnknownHostException, IOException {
 		//Erstellt einen neuen Socket	
-		sender = new Socket(ip, port);
+		socket = new Socket(ip, port);
 			
 		//Initialisiere den reader
-		in = new BufferedReader(new InputStreamReader(sender.getInputStream()));
+		in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		
 		//Initialisiere den output
-		out = new BufferedOutputStream(sender.getOutputStream());
+		out = new BufferedOutputStream(socket.getOutputStream());
 	}
 	
 	/**
@@ -53,7 +53,7 @@ public class Sender {
 	public void close() throws IOException {
 		in.close();
 		out.close();
-		sender.close();
+		socket.close();
 	}
 	
 }

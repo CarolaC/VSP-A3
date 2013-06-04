@@ -1,6 +1,9 @@
 package cash_access;
 
-public abstract class TransactionImplBase {
+import bank_access.AccountSkeleton;
+import mware_lib.IImplBase;
+
+public abstract class TransactionImplBase implements IImplBase{
 
 	public abstract void deposit(String accountID, double amount);
 
@@ -10,6 +13,11 @@ public abstract class TransactionImplBase {
 
 	public static TransactionImplBase narrowCast(Object rawObjectRef) {
 		// TODO
+		return null;
 	}
 
+	@Override
+	public TransactionSkeleton getSkeleton() {
+		return new TransactionSkeleton(this);
+	}
 }

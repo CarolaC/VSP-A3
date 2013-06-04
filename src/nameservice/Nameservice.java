@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Nameservice {
-
+	
+	private String ip;
+	private int port;
+	
 	private Map<String, Object> references = new HashMap<String, Object>();
 	
 	public void rebind(Object servant, String name) {

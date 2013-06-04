@@ -28,5 +28,4 @@ public class ManagerSkeleton implements Skeleton {
 			return "exception:RuntimeException:AccountSkeleton hat eine Methode erwartet und eine "+part[0]+" bekommen";
 		}
 	}
-
 }

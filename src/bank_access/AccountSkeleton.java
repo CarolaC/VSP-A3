@@ -18,7 +18,7 @@ public class AccountSkeleton implements Skeleton {
 			//Wenn es eine Methode ist schaue nach welche
 			switch(part[1]) {
 				default:
-					return "exception:RuntimeException:Methode "+part[1]+" wurde nicht gefunden.";
+					return "exception:RuntimeException:Methode " + part[1] + " wurde nicht gefunden.";
 				case "transfer":
 					Double amount = Double.parseDouble(part[2]);
 					try {

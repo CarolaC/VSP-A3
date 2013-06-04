@@ -22,7 +22,7 @@ public class AccountStub extends AccountImplBase {
 		//Erzeuge einen neuen Sender
 		try {
 			//Senden des Methodenaufrufs
-			Sender sender = new Sender(this.ip, this.port);
+			Client sender = new Client(this.ip, this.port);
 			sender.send("method:transfer:"+amount+"\n");
 			
 			String receive[] = sender.receive().split(":");
@@ -63,7 +63,7 @@ public class AccountStub extends AccountImplBase {
 	@Override
 	public double getBalance() {
 		try {
-			Sender sender = new Sender(this.ip, this.port);
+			Client sender = new Client(this.ip, this.port);
 			sender.send("method:getBalance");
 			
 			String receive[] = sender.receive().split(":");
