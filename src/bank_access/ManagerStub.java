@@ -26,27 +26,32 @@ public class ManagerStub extends ManagerImplBase{
 			String receive[] = sender.receive().split(":");
 			switch(receive[0]) {
 				case "return":
-					//TODO: Was machen wir bei einem void aufruf?
+					sender.close();
+					
 					if(!receive[1].equals("void")) {
 						//Erwartetes Ergebnis
-						sender.close();
 						return receive[2];
 					}else{
-						//TODO
-						throw new RuntimeException("Unkown Error");
+						throw new RuntimeException("Exception: Falscher Datentyp");					
 					}
 				case "exception":
-					//TODO
-					throw new RuntimeException("Unkown Error");
+					//Beende den Sender sauber
+					sender.close();
+					
+					if(receive[1].equals("RuntimeException")) {
+						throw new RuntimeException(receive[2]);
+					}else {
+						throw new RuntimeException("Unbekannter Feheler");
+					}
+				default:
+					sender.close();
+					throw new RuntimeException("Exception: Falscher Datentyp");	//Unbekannter Fehler
 			}
 		} catch (UnknownHostException e) {
 			throw new RuntimeException("Exception: Konnte keine Verbindung zu "+ip+":"+port+" herstellen.");	
 		} catch (IOException e) {
 			throw new RuntimeException("Exception: Konnte keine Verbindung zu "+ip+":"+port+" herstellen.");
 		}
-		
-		//TODO
-		throw new RuntimeException("Unkown Error");
 	}
 
 }

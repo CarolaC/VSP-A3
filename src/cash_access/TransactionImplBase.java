@@ -4,8 +4,7 @@ public abstract class TransactionImplBase {
 
 	public abstract void deposit(String accountID, double amount);
 
-	public abstract void withdraw(String accountID, double amount)
-			throws OverdraftException;
+	public abstract void withdraw(String accountID, double amount) throws OverdraftException;
 
 	public abstract double getBalance(String accountID);
 

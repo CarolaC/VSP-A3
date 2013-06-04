@@ -26,18 +26,28 @@ public class TransactionStub extends TransactionImplBase {
 			String receive[] = sender.receive().split(":");
 			switch(receive[0]) {
 				case "return":
-					//TODO: Was machen wir bei einem void aufruf?
+					//Beende den Sender sauber
+					sender.close();
+					
 					if(receive[1].equals("void")) {
 						//Erwartetes Ergebnis
-						sender.close();
 						return;
 					}else{
-						//TODO: Nicht erwartetet Ergebnis! Exception werfen
+						//Nicht erwarteter Dateityp
+						throw new RuntimeException("Exception: Falscher Datentyp");
 					}
-					break;
 				case "exception":
-					//TODO: Herausfinden welche Exception geworfen wurde
-					break;
+					//Beende den Sender sauber
+					sender.close();
+					
+					if(receive[1].equals("RuntimeException")) {
+						throw new RuntimeException(receive[2]);
+					}else {
+						throw new RuntimeException("Unbekannter Feheler");
+					}
+				default:
+					sender.close();
+					throw new RuntimeException("Exception: Falscher Datentyp");	//Unbekannter Fehler
 			}
 		} catch (UnknownHostException e) {
 			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port + " herstellen.");	
@@ -57,18 +67,30 @@ public class TransactionStub extends TransactionImplBase {
 			String receive[] = sender.receive().split(":");
 			switch(receive[0]) {
 				case "return":
-					//TODO: Was machen wir bei einem void aufruf?
+					//Beende den Sender sauber
+					sender.close();
+					
 					if(receive[1].equals("void")) {
 						//Erwartetes Ergebnis
-						sender.close();
 						return;
 					}else{
-						//TODO: Nicht erwartetet Ergebnis! Exception werfen
+						//Nicht erwarteter Dateityp
+						throw new RuntimeException("Exception: Falscher Datentyp");
 					}
-					break;
 				case "exception":
-					//TODO: Herausfinden welche Exception geworfen wurde
-					break;
+					//Beende den Sender sauber
+					sender.close();
+					
+					if(receive[1].equals("RuntimeException")) {
+						throw new RuntimeException(receive[2]);
+					}else if(receive[1].equals("OverdraftException")) {
+						throw new OverdraftException(receive[2]);
+					}else {
+						throw new RuntimeException("Unbekannter Feheler");
+					}
+				default:
+					sender.close();
+					throw new RuntimeException("Exception: Falscher Datentyp");	//Unbekannter Fehler
 			}
 		} catch (UnknownHostException e) {
 			throw new RuntimeException("Exception: Konnte keine Verbindung zu " + ip + ":" + port + " herstellen.");	
@@ -86,23 +108,30 @@ public class TransactionStub extends TransactionImplBase {
 			String receive[] = sender.receive().split(":");
 			
 			switch(receive[0]) {
-				case "exception":
-					//TODO: Herausfinden was für eine exception
-					break;
 				case "return":
 					if(!receive[1].equals("void")) {
 						return Double.parseDouble(receive[1]);
 					}else{
-						//TODO: Falscher Dateityp EXCEPTION TIME!
-					}				}	
+						throw new RuntimeException("Exception: Falscher Datentyp");					
+					}
+				case "exception":
+					//Beende den Sender sauber
+					sender.close();
+					
+					if(receive[1].equals("RuntimeException")) {
+						throw new RuntimeException(receive[2]);
+					}else {
+						throw new RuntimeException("Unbekannter Feheler");
+					}
+				default:
+					sender.close();
+					throw new RuntimeException("Exception: Falscher Datentyp");	//Unbekannter Fehler
+			}
 		} catch (UnknownHostException e) {
 			throw new RuntimeException("Exception: Konnte keine Verbindung zu "+ ip+ " :"+ port+ "  herstellen.");	
 		} catch (IOException e) {
 			throw new RuntimeException("Exception: Konnte keine Verbindung zu "+ ip+ " :"+ port+ "  herstellen.");
 		}
-		
-		//TODO
-		throw new RuntimeException("Unkown Error");
 	}
 
 }
