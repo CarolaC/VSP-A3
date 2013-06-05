@@ -12,7 +12,7 @@ public abstract class TransactionImplBase implements IImplBase{
 
 	public static TransactionImplBase narrowCast(Object rawObjectRef) {
 		String reference = (String) rawObjectRef;
-        String[] split = reference.split(":");
+        String[] split = reference.split(";");
         String ip = split[0];
         int port = Integer.parseInt(split[1]);
         return new TransactionStub(ip, port, reference);

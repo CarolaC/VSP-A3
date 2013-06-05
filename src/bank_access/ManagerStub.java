@@ -2,6 +2,7 @@ package bank_access;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 import mware_lib.Kommunikationsmodul.*;
 
@@ -20,21 +21,24 @@ public class ManagerStub extends ManagerImplBase {
 	@Override
 	public String createAccount(String owner, String branch) {
 		// Erzeuge einen neuen Sender
+		System.out.println("ManagerStub - createAccount aufgerufen mit " + owner + " " + branch);
 		try {
 			// Senden des Methodenaufrufs
 			Client client = new Client(this.ip, this.port);
-			client.send("method:" + this.objRef + ":createAccount:" + owner
-					+ ":" + branch + "\n");
+			String str = "method:" + this.objRef + ":createAccount:" + owner
+					+ ":" + branch + "\n";
+			client.send(str);
+			System.out.println("MangagerStub - String wurde gesendet: " + str);
 
 			String receive[] = client.receive().split(":");
-
+			System.out.println("ManagerStub - Antwort erhalten mit " + Arrays.toString(receive));
 			switch (receive[0]) {
 			case "return":
 				client.close();
 
 				if (!receive[1].equals("void")) {
 					// Erwartetes Ergebnis
-					return receive[2];
+					return receive[1];
 				} else {
 					throw new RuntimeException("Exception: Falscher Datentyp");
 				}

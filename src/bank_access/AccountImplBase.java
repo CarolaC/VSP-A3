@@ -10,7 +10,7 @@ public abstract class AccountImplBase implements IImplBase {
 
 	public static AccountImplBase narrowCast(Object rawObjectRef) {
 		String reference = (String) rawObjectRef;
-        String[] split = reference.split(":");
+        String[] split = reference.split(";");
         String ip = split[0];
         int port = Integer.parseInt(split[1]);
         return new AccountStub(ip, port, reference);

@@ -2,6 +2,7 @@ package cash_access;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 import mware_lib.Kommunikationsmodul.*;
 
@@ -20,20 +21,22 @@ public class TransactionStub extends TransactionImplBase {
 	@Override
 	public void deposit(String accountID, double amount) {
 		// Erzeuge einen neuen Sender
+		System.out.println("TransactionStub - deposit wurde aufgerufen mit " + accountID + " und " + amount);
 		try {
 			// Senden des Methodenaufrufs
 			Client client = new Client(this.ip, this.port);
 			client.send("method:" + this.objRef + ":deposit:" + accountID + ":"
 					+ amount + "\n");
-
-			String receive[] = client.receive().split(":");
-
+			String answer = client.receive();
+			System.out.println("TransactionStub - Antwort auf deposit: " + answer);
+			String[] receive = answer.split(":");
+			System.out.println("TransactionStub - Antwort auf deposit: " + Arrays.toString(receive));
 			switch (receive[0]) {
 			case "return":
 				// Beende die Verbindung
 				client.close();
 
-				if (receive[2].equals("void")) {
+				if (receive[1].equals("void")) {
 					// Erwartetes Ergebnis
 					return;
 				} else {
@@ -67,6 +70,7 @@ public class TransactionStub extends TransactionImplBase {
 	public void withdraw(String accountID, double amount)
 			throws OverdraftException {
 		// Erzeuge einen neuen Sender
+		System.out.println("TransactionStub - withdraw wurde aufgerufen mit " + accountID + " und " + amount);
 		try {
 			// Senden des Methodenaufrufs
 			Client sender = new Client(this.ip, this.port);
@@ -116,11 +120,13 @@ public class TransactionStub extends TransactionImplBase {
 	public double getBalance(String accountID) {
 		try {
 			// Senden des Methodenaufrufs
+			System.out.println("TransactionStub - getBalance wurde aufgerufen mit " + accountID);
 			Client sender = new Client(this.ip, this.port);
-			sender.send("method:" + this.objRef + ":getBalance");
+			sender.send("method:" + this.objRef + ":getBalance:" + accountID + "\n");
 
 			String receive[] = sender.receive().split(":");
-
+			System.out.println("TransactionStub - Antwort auf getBalance: " + Arrays.toString(receive));
+			
 			switch (receive[0]) {
 			case "return":
 				if (!receive[1].equals("void")) {

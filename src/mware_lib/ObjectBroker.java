@@ -40,12 +40,14 @@ public class ObjectBroker {
 	// startet beliebig viele ReceiverThread
 	public void startManager() {
 		try {
-			Server server = new Server(port);
+			this.port = port + (int)(Math.random()*1000);
+			Server server = new Server(this.port);
 			this.receiverManager = new ReceiverManager(server, this);
 			this.receiverManager.start();
 			System.out.println("ReceiverManager lauscht auf Port " + port);
 		} catch (IOException e) {
 			port++;
+			System.out.println("ReceiverManager wird neu gestartet. Lauscht auf Port " + port);
 			startManager();
 		}
 	}
@@ -62,7 +64,7 @@ public class ObjectBroker {
 
 	// Beendet die Benutzung der Middleware in dieser Anwendung.
 	public void shutDown() {
-
+		this.receiverManager.shutDown();
 	}
 
 }
