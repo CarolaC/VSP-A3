@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 import mware_lib.Kommunikationsmodul.*;
 
-public class NameserviceStub extends Nameservice {
+public class NameserviceStub extends NameService {
 
 	private String nameservice_host; 	 // IP des entfernten Namensdienstes
 	private int nameservice_port; 		 // Port des entfernten Namensdienstes

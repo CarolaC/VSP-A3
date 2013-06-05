@@ -1,12 +1,12 @@
 package mware_lib;
 
-public abstract class Nameservice { 
+public abstract class NameService { 
 	
 	// - Schnittstelle des Namensdienstes -
 	
 	// Meldet ein Objekt (servant) beim Namensdienst an.
 	// Eine eventuell schon vorhandene Objektreferenz gleichen Namens
-	// soll überschrieben werden.
+	// soll ï¿½berschrieben werden.
 	public abstract void rebind(Object servant, String name);
 
 	// Liefert eine generische Objektreferenz zu einem Namen. (vgl. unten)

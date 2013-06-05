@@ -13,7 +13,7 @@ public class ObjectBroker {
 	private int listenPort; // Port des Nameservice
 	private NameserviceStub ns;
 	private Referenzmodul referenzmodul; // Referenzmodul
-	private static final int PORT = 20000; // Port des Empfaengers
+	private int port = 20000; // Port des Empfaengers
 
 	private ReceiverManager receiverManager;
 
@@ -40,19 +40,20 @@ public class ObjectBroker {
 	// startet beliebig viele ReceiverThread
 	public void startManager() {
 		try {
-			Server server = new Server(PORT);
+			Server server = new Server(port);
 			this.receiverManager = new ReceiverManager(server, this);
 			this.receiverManager.start();
-			System.out.println("ReceiverManager lauscht auf Port " + PORT);
+			System.out.println("ReceiverManager lauscht auf Port " + port);
 		} catch (IOException e) {
-			e.printStackTrace();
+			port++;
+			startManager();
 		}
 	}
 
 	// Liefert den Namensdienst (Stellvetreterobjekt).
-	public Nameservice getNameService() {
+	public NameService getNameService() {
 		System.out.println("ObjectBroker - getNameservice aufgerufen");
-		return (ns == null ? new NameserviceStub(serviceHost, listenPort, referenzmodul,PORT) : ns);
+		return (ns == null ? new NameserviceStub(serviceHost, listenPort, referenzmodul,port) : ns);
 	}
 
 	public Referenzmodul getReferenzmodul() {

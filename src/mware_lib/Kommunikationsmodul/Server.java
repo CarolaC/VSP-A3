@@ -18,7 +18,13 @@ public class Server {
 	}
 
 	public AcceptedSocket accept() throws IOException {
-		return new AcceptedSocket(serverSocket.accept());
+		AcceptedSocket ac = null;
+		try {
+		ac = new AcceptedSocket(serverSocket.accept());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return ac;
 	}
 
 	public void shutdown() throws IOException {
