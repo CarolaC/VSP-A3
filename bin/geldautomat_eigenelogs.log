@@ -1,0 +1,164 @@
+ObjectBroker - ObjectBroker erzeugt
+Server - Server wird gestartet
+Server - Lauscht auf Port: 21153
+ReceiverManager lauscht auf Port 21153
+ObjectBroker - receiverManager gestartet
+ObjectBroker - getNameservice aufgerufen
+NameserviceStub - wird erzeugt
+NameserviceStub - resolve aufgerufen mit NDEA-1
+Client - method:resolve:NDEA-1
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;25993;class filiale.Filiale
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;25993;class filiale.Filiale
+String aufgeteilt in [return, 127.0.1.1;25993;class filiale.Filiale]
+NameserviceStub - RETURN 127.0.1.1;25993;class filiale.Filiale
+Account resolved.
+TransactionStub - getBalance wurde aufgerufen mit 77239
+Client - method:127.0.1.1;25993;class filiale.Filiale:getBalance:77239
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:77007.0
+TransactionStub - Antwort auf getBalance: [return, 77007.0]
+bal:77007.0
+bal...
+TransactionStub - getBalance wurde aufgerufen mit 77239
+Client - method:127.0.1.1;25993;class filiale.Filiale:getBalance:77239
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+depo...
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+TransactionStub - deposit wurde aufgerufen mit 77239 und 1.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+...depo
+Client - habe folgendes gelesen: return:77007.0
+TransactionStub - Antwort auf getBalance: [return, 77007.0]
+...bal
+TransactionStub - deposit wurde aufgerufen mit 77239 und -10.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:-10.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+neg numbers check 1 ok
+TransactionStub - withdraw wurde aufgerufen mit 77239 und -10.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:-10.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+neg numbers check 2 ok
+TransactionStub - deposit wurde aufgerufen mit 77239 und -413.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:-413.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+TransactionStub - Antwort auf deposit: return:void
+TransactionStub - Antwort auf deposit: [return, void]
+*** bank001d
+TransactionStub - withdraw wurde aufgerufen mit 77239 und 413.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:413.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: exception:OverdraftException:bank-wdE-77123
+*** 'bank-wdE-77123' class cash_access.OverdraftException
+TransactionStub - withdraw wurde aufgerufen mit 77239 und 412.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:412.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: exception:OverdraftException:bank-ovdE-77123
+'bank-ovdE-77123' class cash_access.OverdraftException
+TransactionStub - deposit wurde aufgerufen mit 77239 und 232.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:232.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: exception:RuntimeException:Fehler bei deposit
+TransactionStub - Antwort auf deposit: exception:RuntimeException:Fehler bei deposit
+TransactionStub - Antwort auf deposit: [exception, RuntimeException, Fehler bei deposit]
+'Unbekannter Feheler' class java.lang.RuntimeException
+TransactionStub - withdraw wurde aufgerufen mit 77239 und 233.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:233.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: exception:OverdraftException:branch-rte2_7011
+'branch-rte2_7011' class cash_access.OverdraftException
+TransactionStub - withdraw wurde aufgerufen mit 77239 und 234.0
+Client - method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:234.0
+ wird gesendet an 127.0.1.1:25993
+Client - wird gelesen
+Client - habe folgendes gelesen: exception:OverdraftException:branch-ovdE_7011
+'branch-ovdE_7011' class cash_access.OverdraftException
+
+Shutting down object broker...Done.
+Thread main running=true class:java.lang.Thread
+Thread Finalizer running=true class:java.lang.ref.Finalizer$FinalizerThread
+Thread Thread-0 running=true class:mware_lib.Kommunikationsmodul.ReceiverManager
+Thread Signal Dispatcher running=true class:java.lang.Thread
+Thread Reference Handler running=true class:java.lang.ref.Reference$ReferenceHandler

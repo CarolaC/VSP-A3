@@ -1,0 +1,323 @@
+ObjectBroker - ObjectBroker erzeugt
+Server - Server wird gestartet
+Server - Lauscht auf Port: 27218
+ReceiverManager lauscht auf Port 27218
+ObjectBroker - receiverManager gestartet
+ObjectBroker - getNameservice aufgerufen
+NameserviceStub - wird erzeugt
+Rebind NDEA...NameserviceStub - rebind aufgerufen mit bank.Bank@69a66ce8 NDEA
+Referenzstring erzeugt: 127.0.1.1;27218;class bank.Bank
+Neuen Client erzeugt mit Port 10000
+Sende Client folgenden String: method:rebind:127.0.1.1;27218;class bank.Bank:NDEA
+
+Client - method:rebind:127.0.1.1;27218;class bank.Bank:NDEA
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+Folgende Antwort erhalten: return:void
+Skeleton erzeugt zu Objektreferenz
+Done.
+-> Press ENTER to exit application...
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@6a059fa4
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.Bank:createAccount:Joe:NDEA-1
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.Bank:createAccount:Joe:NDEA-1
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.Bank
+ReceiverThread - Skeleton bank_access.ManagerSkeleton@145edcf5 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.Bank:createAccount:Joe:NDEA-1
+ObjectBroker - getNameservice aufgerufen
+NameserviceStub - wird erzeugt
+NameserviceStub - rebind aufgerufen mit bank.a@53627086 77239
+Referenzstring erzeugt: 127.0.1.1;27218;class bank.a
+Neuen Client erzeugt mit Port 10000
+Sende Client folgenden String: method:rebind:127.0.1.1;27218;class bank.a:77239
+
+Client - method:rebind:127.0.1.1;27218;class bank.a:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+Folgende Antwort erhalten: return:void
+Skeleton erzeugt zu Objektreferenz
+ReceiverThread - remoteInvoke hat zurückgegeben return:77239
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@4f2421db
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:getBalance
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:getBalance
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:getBalance
+ReceiverThread - remoteInvoke hat zurückgegeben return:77007.0
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@13276cc
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:-123.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:-123.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:-123.0
+AccountSkeleton - Amount: -123.0
+object.transfer(-123.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@1a1a1c6
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:getBalance
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:getBalance
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:getBalance
+ReceiverThread - remoteInvoke hat zurückgegeben return:77007.0
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@5d087070
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@55560b81
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:getBalance
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:getBalance
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:getBalance
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@c00a029
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@10bb6d85
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@4e78b73f
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@5b036b16
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@589f2cff
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@4e0dddff
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@7020b3a3
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@14e44dd3
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@28278a47
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:1.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:1.0
+AccountSkeleton - Amount: 1.0
+object.transfer(1.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverThread - remoteInvoke hat zurückgegeben return:77007.0
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@2f56a6be
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:-10.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:-10.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:-10.0
+AccountSkeleton - Amount: -10.0
+object.transfer(-10.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@818de3
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:10.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:10.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:10.0
+AccountSkeleton - Amount: 10.0
+object.transfer(10.0);
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@5f788551
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:-413.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:-413.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:-413.0
+AccountSkeleton - Amount: -413.0
+object.transfer(-413.0);
+ReceiverThread - remoteInvoke hat zurückgegeben exception:OverdraftException:bank-wdE-77123
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@487c9b46
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:-413.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:-413.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:-413.0
+AccountSkeleton - Amount: -413.0
+object.transfer(-413.0);
+ReceiverThread - remoteInvoke hat zurückgegeben exception:OverdraftException:bank-wdE-77123
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@19160e64
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;27218;class bank.a:transfer:-412.0
+ReceiverThread - message angekommen: method:127.0.1.1;27218;class bank.a:transfer:-412.0
+127.0.1.1;27218;class bank.Bank:bank_access.ManagerSkeleton@145edcf5
+
+127.0.1.1;27218;class bank.a:bank_access.AccountSkeleton@5fa721e2
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;27218;class bank.a
+ReceiverThread - Skeleton bank_access.AccountSkeleton@5fa721e2 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;27218;class bank.a:transfer:-412.0
+AccountSkeleton - Amount: -412.0
+object.transfer(-412.0);
+ReceiverThread - remoteInvoke hat zurückgegeben exception:OverdraftException:bank-ovdE-77123
+AcceptedSocket - wird gesendet

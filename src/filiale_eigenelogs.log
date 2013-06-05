@@ -1,0 +1,599 @@
+ObjectBroker - ObjectBroker erzeugt
+Server - Server wird gestartet
+Server - Lauscht auf Port: 25993
+ReceiverManager lauscht auf Port 25993
+ObjectBroker - receiverManager gestartet
+ObjectBroker - getNameservice aufgerufen
+NameserviceStub - wird erzeugt
+NameserviceStub - resolve aufgerufen mit NDEA
+Client - method:resolve:NDEA
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.Bank
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.Bank
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.Bank]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.Bank
+ManagerImplBase - narrowCast aufgerufen mit Objektreferenz 127.0.1.1;27218;class bank.Bank
+ManagerImplBase - narrowCast aufgerufen mit reference 127.0.1.1;27218;class bank.Bank
+ManagerImplBase - reference aufgeteilt in [127.0.1.1, 27218, class bank.Bank]
+ManagerImplBase - Stub wird erzeugt mit IP 127.0.1.1 und Port 27218
+Bank resolved.
+ManagerStub - createAccount aufgerufen mit Joe NDEA-1
+Client - method:127.0.1.1;27218;class bank.Bank:createAccount:Joe:NDEA-1
+ wird gesendet an 127.0.1.1:27218
+MangagerStub - String wurde gesendet: method:127.0.1.1;27218;class bank.Bank:createAccount:Joe:NDEA-1
+
+Client - wird gelesen
+Client - habe folgendes gelesen: return:77239
+ManagerStub - Antwort erhalten mit [return, 77239]
+Account created 77239
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+Client - method:127.0.1.1;27218;class bank.a:getBalance
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:77007.0
+Magic key is 77007.0
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:-123.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:-123.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+transfer O.K.
+ObjectBroker - getNameservice aufgerufen
+NameserviceStub - wird erzeugt
+NameserviceStub - rebind aufgerufen mit filiale.Filiale@47f9d0e NDEA-1
+Referenzstring erzeugt: 127.0.1.1;25993;class filiale.Filiale
+Neuen Client erzeugt mit Port 10000
+Sende Client folgenden String: method:rebind:127.0.1.1;25993;class filiale.Filiale:NDEA-1
+
+Client - method:rebind:127.0.1.1;25993;class filiale.Filiale:NDEA-1
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+Folgende Antwort erhalten: return:void
+Skeleton erzeugt zu Objektreferenz
+-> Press ENTER to exit application...
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@15d75e80
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:getBalance:77239
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:getBalance:77239
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:getBalance:77239
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+Client - method:127.0.1.1;27218;class bank.a:getBalance
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:77007.0
+ReceiverThread - remoteInvoke hat zurückgegeben return:77007.0
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@64ba3b30
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:getBalance:77239
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:getBalance:77239
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:getBalance:77239
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@2876d19c
+Client - wird gelesen
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@2097cc12
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+Client - method:127.0.1.1;27218;class bank.a:getBalance
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@1d28b30e
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@30fc45da
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@1e680525
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@2cc821ef
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@62a83610
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@7edea8b3
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@318430a5
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@6e11e9eb
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:1.0
+TransactionSkeleton - deposit auf 77239 mit 1.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:1.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:1.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+Client - habe folgendes gelesen: return:77007.0
+ReceiverThread - remoteInvoke hat zurückgegeben return:77007.0
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@6ccadbd
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:-10.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:-10.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:-10.0
+TransactionSkeleton - deposit auf 77239 mit -10.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:-10.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:-10.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@5bc5d0e0
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:-10.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:-10.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:-10.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:10.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:10.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: return:void
+AccountStub - Antwort bekommen: [return, void]
+AccountStub - es gibt keinen Rückgabewert
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@1fc21ed3
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:-413.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:-413.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:-413.0
+TransactionSkeleton - deposit auf 77239 mit -413.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:-413.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:-413.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: exception:OverdraftException:bank-wdE-77123
+AccountStub - Antwort bekommen: [exception, OverdraftException, bank-wdE-77123]
+ReceiverThread - remoteInvoke hat zurückgegeben return:void
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@71cdecf7
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:413.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:413.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:413.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:-413.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:-413.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: exception:OverdraftException:bank-wdE-77123
+AccountStub - Antwort bekommen: [exception, OverdraftException, bank-wdE-77123]
+ReceiverThread - remoteInvoke hat zurückgegeben exception:OverdraftException:bank-wdE-77123
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@6f609af9
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:412.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:412.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:412.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+AccountStub - Client erzeugt mit 127.0.1.1 27218
+AccountStub - Folgendes wird gesendet: method:127.0.1.1;27218;class bank.a:transfer:-412.0
+
+Client - method:127.0.1.1;27218;class bank.a:transfer:-412.0
+ wird gesendet an 127.0.1.1:27218
+Client - wird gelesen
+Client - habe folgendes gelesen: exception:OverdraftException:bank-ovdE-77123
+AccountStub - Antwort bekommen: [exception, OverdraftException, bank-ovdE-77123]
+ReceiverThread - remoteInvoke hat zurückgegeben exception:OverdraftException:bank-ovdE-77123
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@3daa3554
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:232.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:232.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:deposit:77239:232.0
+TransactionSkeleton - deposit auf 77239 mit 232.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+ReceiverThread - remoteInvoke hat zurückgegeben exception:RuntimeException:Fehler bei deposit
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@1bdbbaab
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:233.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:233.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:233.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+ReceiverThread - remoteInvoke hat zurückgegeben exception:OverdraftException:branch-rte2_7011
+AcceptedSocket - wird gesendet
+ReceiverManager - erzeuge neuen Receiverthread auf Socket mware_lib.Kommunikationsmodul.AcceptedSocket@6d97950e
+AcceptedSocket - wird gelesen
+AcceptedSocket - habe folgendes gelesen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:234.0
+ReceiverThread - message angekommen: method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:234.0
+127.0.1.1;25993;class filiale.Filiale:cash_access.TransactionSkeleton@550df8c7
+
+ReceiverThread - suche nach Skeleton von 127.0.1.1;25993;class filiale.Filiale
+ReceiverThread - Skeleton cash_access.TransactionSkeleton@550df8c7 aus Referenzmodul wird verwendet
+ReceiverThread - remoteInvoke wird aufgerufen mit method:127.0.1.1;25993;class filiale.Filiale:withdraw:77239:234.0
+NameserviceStub - resolve aufgerufen mit 77239
+Client - method:resolve:77239
+ wird gesendet an 127.0.0.1:10000
+Client - wird gelesen
+Client - habe folgendes gelesen: return:127.0.1.1;27218;class bank.a
+NameserviceStub - habe folgenden String erhalten: return:127.0.1.1;27218;class bank.a
+String aufgeteilt in [return, 127.0.1.1;27218;class bank.a]
+NameserviceStub - RETURN 127.0.1.1;27218;class bank.a
+ReceiverThread - remoteInvoke hat zurückgegeben exception:OverdraftException:branch-ovdE_7011
+AcceptedSocket - wird gesendet

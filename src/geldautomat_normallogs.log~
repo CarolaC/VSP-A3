@@ -1,0 +1,27 @@
+ObjectBroker - ObjectBroker erzeugt
+ObjectBroker - receiverManager gestartet
+Account resolved.
+TransactionStub - getBalance wurde aufgerufen mit 77239
+TransactionStub - Antwort auf getBalance: [return, 77007.0]
+bal:77007.0
+bal...
+TransactionStub - getBalance wurde aufgerufen mit 77239
+depo...
+...depo
+TransactionStub - Antwort auf getBalance: [return, 77007.0]
+...bal
+neg numbers check 1 ok
+neg numbers check 2 ok
+*** bank001d
+*** 'bank-wdE-77123' class cash_access.OverdraftException
+'bank-ovdE-77123' class cash_access.OverdraftException
+'Unbekannter Feheler' class java.lang.RuntimeException
+'branch-rte2_7011' class cash_access.OverdraftException
+'branch-ovdE_7011' class cash_access.OverdraftException
+
+Shutting down object broker...Done.
+Thread main running=true class:java.lang.Thread
+Thread Reference Handler running=true class:java.lang.ref.Reference$ReferenceHandler
+Thread Finalizer running=true class:java.lang.ref.Finalizer$FinalizerThread
+Thread Signal Dispatcher running=true class:java.lang.Thread
+Thread Thread-0 running=true class:mware_lib.Kommunikationsmodul.ReceiverManager
