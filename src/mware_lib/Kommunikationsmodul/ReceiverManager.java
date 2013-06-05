@@ -27,7 +27,7 @@ public class ReceiverManager extends Thread {
             try {
                 socket = server.accept();
                 ReceiverThread thread = new ReceiverThread(socket, broker);
-                System.out.println("ReceiverManager - erzeuge neuen Receiverthread auf Socket " + socket);
+//                System.out.println("ReceiverManager - erzeuge neuen Receiverthread auf Socket " + socket);
                 thread.start();
                 this.addReceiverThread(thread);
             } catch (IOException ex) {

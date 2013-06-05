@@ -11,13 +11,13 @@ public class NameserviceStarter {
 	private static final int NAMESERVICE_PORT = 10000;
 	
 	public static void main(String[] args) {
-		System.out.println("Nameservice wird gestartet");
+//		System.out.println("Nameservice wird gestartet");
 		NameService ns = new NameService();
 
         try {
-        	System.out.println("Starte Server");
+//        	System.out.println("Starte Server");
             Server server = new Server(NAMESERVICE_PORT);
-        	System.out.println("Server gestartet");
+//        	System.out.println("Server gestartet");
             
         	while (true) {
                 AcceptedSocket socket = server.accept();

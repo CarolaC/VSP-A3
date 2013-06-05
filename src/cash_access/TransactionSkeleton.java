@@ -18,14 +18,19 @@ public class TransactionSkeleton implements Skeleton {
 			// Wenn es eine Methode ist schaue nach welche
 			switch (part[2]) {
 			case "deposit":
-				object.deposit(part[3], Double.parseDouble(part[4]));
+//				System.out.println("TransactionSkeleton - deposit auf "+part[3]+" mit "+Double.parseDouble(part[4]));
+				try {
+					object.deposit(part[3], Double.parseDouble(part[4]));
+				} catch(Exception e) {
+					return "exception:RuntimeException:Fehler bei deposit";
+				}
 				return "return:void";
 			case "withdraw":
 				try {
 					object.withdraw(part[3], Double.parseDouble(part[4]));
 				} catch (NumberFormatException e) {
 					return "exception:RuntimeException:Konnte String nicht in ein Double parsen.";
-				} catch (OverdraftException e) {
+				} catch (Exception e) {
 					return "exception:OverdraftException:" + e.getMessage();
 				}
 				return "return:void";

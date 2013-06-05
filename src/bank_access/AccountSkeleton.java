@@ -20,15 +20,14 @@ public class AccountSkeleton implements Skeleton {
 			switch (part[2]) {
 			case "transfer":
 				Double amount = Double.parseDouble(part[3]);
-				System.out.println("AccountSkeleton - Amount: " + amount);
+//				System.out.println("AccountSkeleton - Amount: " + amount);
 				try {
+//					System.out.println("object.transfer("+amount+");");
 					object.transfer(amount);
 					return "return:void";
-				} catch (OverdraftException e) {
+				} catch (Exception e) {
 					return "exception:OverdraftException:" + e.getMessage();
-				} catch(RuntimeException e) {
-					return "exception:RuntimeException:Konnte Transfer nicht ausführen";
-				}
+				} 
 			case "getBalance":
 				Double balance = object.getBalance();
 				return "return:" + balance;

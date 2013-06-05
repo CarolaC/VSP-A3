@@ -20,10 +20,10 @@ public class Referenzmodul {
 		this.skeletons.put(str, skeleton);
 	}
 	
-	public void getAllSkeletons() {
-		for (Entry<String, Skeleton> e : this.skeletons.entrySet()) {
-			System.out.println(e.getKey() + ":" + e.getValue() + "\n");
-		}
-	}
+//	public void getAllSkeletons() {
+//		for (Entry<String, Skeleton> e : this.skeletons.entrySet()) {
+//			System.out.println(e.getKey() + ":" + e.getValue() + "\n");
+//		}
+//	}
 	
 }

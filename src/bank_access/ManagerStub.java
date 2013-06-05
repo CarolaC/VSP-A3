@@ -21,17 +21,17 @@ public class ManagerStub extends ManagerImplBase {
 	@Override
 	public String createAccount(String owner, String branch) {
 		// Erzeuge einen neuen Sender
-		System.out.println("ManagerStub - createAccount aufgerufen mit " + owner + " " + branch);
+//		System.out.println("ManagerStub - createAccount aufgerufen mit " + owner + " " + branch);
 		try {
 			// Senden des Methodenaufrufs
 			Client client = new Client(this.ip, this.port);
 			String str = "method:" + this.objRef + ":createAccount:" + owner
 					+ ":" + branch + "\n";
 			client.send(str);
-			System.out.println("MangagerStub - String wurde gesendet: " + str);
+//			System.out.println("MangagerStub - String wurde gesendet: " + str);
 
 			String receive[] = client.receive().split(":");
-			System.out.println("ManagerStub - Antwort erhalten mit " + Arrays.toString(receive));
+//			System.out.println("ManagerStub - Antwort erhalten mit " + Arrays.toString(receive));
 			switch (receive[0]) {
 			case "return":
 				client.close();

@@ -25,22 +25,22 @@ public class Client {
 	}
 	
 	public void send(String str) throws IOException {
-		System.out.println("Client - " + str + " wird gesendet an " + this.ip + ":" + this.port);
+//		System.out.println("Client - " + str + " wird gesendet an " + this.ip + ":" + this.port);
 		str = str + "\n";
 		try {
 		out.write(str);
 		out.newLine();
 		out.flush();
 		}catch(Exception e) {
-			System.out.println("Client - Senden Fehlgeschlagen von: " + str);
+//			System.out.println("Client - Senden Fehlgeschlagen von: " + str);
 			e.printStackTrace();
 		}
 	}
 	
 	public String receive() throws IOException {
-		System.out.println("Client - wird gelesen");
+//		System.out.println("Client - wird gelesen");
 		String str = in.readLine();
-		System.out.println("Client - habe folgendes gelesen: " + str);
+//		System.out.println("Client - habe folgendes gelesen: " + str);
 		return str;
 	}
 	

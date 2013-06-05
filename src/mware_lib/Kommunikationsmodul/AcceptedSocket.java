@@ -17,14 +17,14 @@ public class AcceptedSocket {
     }
 
     public String receive() throws IOException {
-    	System.out.println("AcceptedSocket - wird gelesen");
+//    	System.out.println("AcceptedSocket - wird gelesen");
         String str = in.readLine();
-        System.out.println("AcceptedSocket - habe folgendes gelesen: " + str);
+//        System.out.println("AcceptedSocket - habe folgendes gelesen: " + str);
         return str;
     }
 
     public void send(String message) throws IOException {
-    	System.out.println("AcceptedSocket - wird gesendet");
+//    	System.out.println("AcceptedSocket - wird gesendet");
         out.write((message).getBytes());
     }
 

@@ -40,21 +40,21 @@ public class ObjectBroker {
 	// startet beliebig viele ReceiverThread
 	public void startManager() {
 		try {
-			this.port = port + (int)(Math.random()*1000);
+			this.port = port + (int)(Math.random()*10000);
 			Server server = new Server(this.port);
 			this.receiverManager = new ReceiverManager(server, this);
 			this.receiverManager.start();
-			System.out.println("ReceiverManager lauscht auf Port " + port);
+//			System.out.println("ReceiverManager lauscht auf Port " + port);
 		} catch (IOException e) {
 			port++;
-			System.out.println("ReceiverManager wird neu gestartet. Lauscht auf Port " + port);
+//			System.out.println("ReceiverManager wird neu gestartet. Lauscht auf Port " + port);
 			startManager();
 		}
 	}
 
 	// Liefert den Namensdienst (Stellvetreterobjekt).
 	public NameService getNameService() {
-		System.out.println("ObjectBroker - getNameservice aufgerufen");
+//		System.out.println("ObjectBroker - getNameservice aufgerufen");
 		return (ns == null ? new NameserviceStub(serviceHost, listenPort, referenzmodul,port) : ns);
 	}
 

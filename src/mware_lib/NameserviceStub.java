@@ -14,7 +14,7 @@ public class NameserviceStub extends NameService {
 	private int receiverPort;			 // Port des Empfaengers
 
 	public NameserviceStub(String host, int port, Referenzmodul referenzmodul, int receiverPort) {
-		System.out.println("NameserviceStub - wird erzeugt");
+//		System.out.println("NameserviceStub - wird erzeugt");
 		this.nameservice_host = host;
 		this.nameservice_port = port;
 		this.referenzmodul = referenzmodul;
@@ -24,26 +24,26 @@ public class NameserviceStub extends NameService {
 	@Override
 	public void rebind(Object servant, String name) {
 		try {
-			System.out.println("NameserviceStub - rebind aufgerufen mit " + servant + " " + name);
+//			System.out.println("NameserviceStub - rebind aufgerufen mit " + servant + " " + name);
 			// Objektreferenz als Stringrepraesentation
 			String objRefString = "";
 			objRefString += java.net.InetAddress.getLocalHost().getHostAddress();
 			objRefString += ";" + this.receiverPort;
 			objRefString += ";" + servant.getClass();
 			
-			System.out.println("Referenzstring erzeugt: " + objRefString);
+//			System.out.println("Referenzstring erzeugt: " + objRefString);
 			// erzeuge Methoden-Aufruf String
 			String request = "method:rebind:" + objRefString + ":" + name + "\n";
 			// neuen Sender erzeugen
 			Client client = new Client(this.nameservice_host,
 					this.nameservice_port);
-			System.out.println("Neuen Client erzeugt mit Port " + this.nameservice_port);
+//			System.out.println("Neuen Client erzeugt mit Port " + this.nameservice_port);
 			// String absenden
-			System.out.println("Sende Client folgenden String: " + request);
+//			System.out.println("Sende Client folgenden String: " + request);
 			client.send(request);
 						
 			String answer = client.receive();
-			System.out.println("Folgende Antwort erhalten: " + answer);
+//			System.out.println("Folgende Antwort erhalten: " + answer);
 			String[] blocks = answer.split(":");
 			
 			switch (blocks[0]) {
@@ -55,7 +55,7 @@ public class NameserviceStub extends NameService {
 
 					// Skeleton zur Objektreferenz im Referenzmodul eintragen
 					this.referenzmodul.putSkeleton(objRefString, ((IImplBase)servant).getSkeleton());	
-					System.out.println("Skeleton erzeugt zu Objektreferenz");
+//					System.out.println("Skeleton erzeugt zu Objektreferenz");
 					
 					return;
 				} else {
@@ -88,7 +88,7 @@ public class NameserviceStub extends NameService {
 	@Override
 	public Object resolve(String name) {
 		try {
-			System.out.println("NameserviceStub - resolve aufgerufen mit " + name);
+//			System.out.println("NameserviceStub - resolve aufgerufen mit " + name);
 			// erzeuge Methoden-Aufruf String
 			String request = "method:resolve:" + name + "\n";
 			// neuen Sender erzeugen
@@ -98,16 +98,16 @@ public class NameserviceStub extends NameService {
 			client.send(request);
 			// Objektreferenz vom Namensdienst zurueckbekommen
 			String string = client.receive();
-			System.out.println("NameserviceStub - habe folgenden String erhalten: " + string);
+//			System.out.println("NameserviceStub - habe folgenden String erhalten: " + string);
 			String[] blocks = string.split(":");
-			System.out.println("String aufgeteilt in " + Arrays.toString(blocks));
+//			System.out.println("String aufgeteilt in " + Arrays.toString(blocks));
 			switch (blocks[0]) {
 			case "return":
 				// Beende die Verbindung
 				client.close();
 
 				if (!blocks[1].equals("void")) {
-					System.out.println("NameserviceStub - RETURN " + blocks[1]);
+//					System.out.println("NameserviceStub - RETURN " + blocks[1]);
 					return (Object)blocks[1];
 				} else {
 					throw new RuntimeException("Exception: Falscher Datentyp");

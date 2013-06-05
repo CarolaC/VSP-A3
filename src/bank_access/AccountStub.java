@@ -24,14 +24,14 @@ public class AccountStub extends AccountImplBase {
 		try {
 			// Senden des Methodenaufrufs
 			Client client = new Client(this.ip, this.port);
-			System.out.println("AccountStub - Client erzeugt mit " + this.ip + " " + this.port);
+//			System.out.println("AccountStub - Client erzeugt mit " + this.ip + " " + this.port);
 			String request = "method:" + this.objRef + ":transfer:" + amount + "\n";
-			System.out.println("AccountStub - Folgendes wird gesendet: " + request);
+//			System.out.println("AccountStub - Folgendes wird gesendet: " + request);
 			client.send(request);
 
 			String receive[] = client.receive().split(":");
 			
-			System.out.println("AccountStub - Antwort bekommen: " + Arrays.toString(receive));
+//			System.out.println("AccountStub - Antwort bekommen: " + Arrays.toString(receive));
 			
 			switch (receive[0]) {
 			case "return":
@@ -39,7 +39,7 @@ public class AccountStub extends AccountImplBase {
 				client.close();
 
 				if (receive[1].equals("void")) {
-					System.out.println("AccountStub - es gibt keinen Rückgabewert");
+//					System.out.println("AccountStub - es gibt keinen Rückgabewert");
 					// Erwartetes Ergebnis
 					return;
 				} else {

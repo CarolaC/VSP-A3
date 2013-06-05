@@ -21,16 +21,16 @@ public class TransactionStub extends TransactionImplBase {
 	@Override
 	public void deposit(String accountID, double amount) {
 		// Erzeuge einen neuen Sender
-		System.out.println("TransactionStub - deposit wurde aufgerufen mit " + accountID + " und " + amount);
+//		System.out.println("TransactionStub - deposit wurde aufgerufen mit " + accountID + " und " + amount);
 		try {
 			// Senden des Methodenaufrufs
 			Client client = new Client(this.ip, this.port);
 			client.send("method:" + this.objRef + ":deposit:" + accountID + ":"
 					+ amount + "\n");
 			String answer = client.receive();
-			System.out.println("TransactionStub - Antwort auf deposit: " + answer);
+//			System.out.println("TransactionStub - Antwort auf deposit: " + answer);
 			String[] receive = answer.split(":");
-			System.out.println("TransactionStub - Antwort auf deposit: " + Arrays.toString(receive));
+//			System.out.println("TransactionStub - Antwort auf deposit: " + Arrays.toString(receive));
 			switch (receive[0]) {
 			case "return":
 				// Beende die Verbindung
@@ -70,7 +70,7 @@ public class TransactionStub extends TransactionImplBase {
 	public void withdraw(String accountID, double amount)
 			throws OverdraftException {
 		// Erzeuge einen neuen Sender
-		System.out.println("TransactionStub - withdraw wurde aufgerufen mit " + accountID + " und " + amount);
+//		System.out.println("TransactionStub - withdraw wurde aufgerufen mit " + accountID + " und " + amount);
 		try {
 			// Senden des Methodenaufrufs
 			Client sender = new Client(this.ip, this.port);

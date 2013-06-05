@@ -8,13 +8,13 @@ public class Server {
 	private ServerSocket serverSocket;
 
 	public Server(int listenPort) throws IOException {
-		System.out.println("Server - Server wird gestartet");
+//		System.out.println("Server - Server wird gestartet");
 		try {
 		serverSocket = new ServerSocket(listenPort);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Server - Lauscht auf Port: "+listenPort);
+//		System.out.println("Server - Lauscht auf Port: "+listenPort);
 	}
 
 	public AcceptedSocket accept() throws IOException {
