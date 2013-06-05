@@ -4,9 +4,9 @@ import mware_lib.Skeleton;
 
 public class NameserviceSkeleton implements Skeleton {
 
-	private Nameservice ns;
+	private NameService ns;
 
-	public NameserviceSkeleton(Nameservice ns) {
+	public NameserviceSkeleton(NameService ns) {
 		this.ns = ns;
 	}
 
@@ -30,7 +30,7 @@ public class NameserviceSkeleton implements Skeleton {
 			}
 			
 		} else {
-			// Exception, wenn das Schluesselwort method nicht übergeben wurde
+			// Exception, wenn das Schluesselwort method nicht ï¿½bergeben wurde
 			return "exception:RuntimeException:NameserviceSkeleton hat eine Methode erwartet und eine "
 					+ part[0] + " bekommen";
 		}

@@ -1,35 +1,67 @@
 package mware_lib;
 
+import java.io.IOException;
+
+import mware_lib.Kommunikationsmodul.ReceiverManager;
+import mware_lib.Kommunikationsmodul.Server;
+
 public class ObjectBroker {
-	
+
 	// - Front-End der Middleware -
-	
-	private String serviceHost;
-	private int listenPort;
-	private Referenzmodul referenzmodul;
-	
+
+	private String serviceHost; // IP-Adresse des Nameservice
+	private int listenPort; // Port des Nameservice
+	private NameserviceStub ns;
+	private Referenzmodul referenzmodul; // Referenzmodul
+	private static final int PORT = 20000; // Port des Empfaengers
+
+	private ReceiverManager receiverManager;
+
 	private ObjectBroker(String serviceHost, int listenPort) {
 		this.serviceHost = serviceHost;
 		this.listenPort = listenPort;
 		this.referenzmodul = new Referenzmodul();
 	}
 
-	// Das hier zurückgelieferte Objekt soll der zentrale Einstiegspunkt
+	// Das hier zurï¿½ckgelieferte Objekt soll der zentrale Einstiegspunkt
 	// der Middleware aus Anwendersicht sein.
 	// Parameter: Host und Port, bei dem die Dienste (Namensdienst)
 	// kontaktiert werden sollen.
 	public static ObjectBroker init(String serviceHost, int listenPort) {
-		return new ObjectBroker(serviceHost, listenPort);
+		// Erzeuge ein neues Broker Objekt
+		ObjectBroker objBroker = new ObjectBroker(serviceHost, listenPort);
+		System.out.println("ObjectBroker - ObjectBroker erzeugt");
+		// Starte den Receiver Manager
+		objBroker.startManager();
+		System.out.println("ObjectBroker - receiverManager gestartet");
+		return objBroker;
 	}
-	
+
+	// startet beliebig viele ReceiverThread
+	public void startManager() {
+		try {
+			Server server = new Server(PORT);
+			this.receiverManager = new ReceiverManager(server, this);
+			this.receiverManager.start();
+			System.out.println("ReceiverManager lauscht auf Port " + PORT);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	// Liefert den Namensdienst (Stellvetreterobjekt).
 	public Nameservice getNameService() {
-		return new NameserviceStub(serviceHost, listenPort, referenzmodul);
+		System.out.println("ObjectBroker - getNameservice aufgerufen");
+		return (ns == null ? new NameserviceStub(serviceHost, listenPort, referenzmodul,PORT) : ns);
+	}
+
+	public Referenzmodul getReferenzmodul() {
+		return this.referenzmodul;
 	}
 
 	// Beendet die Benutzung der Middleware in dieser Anwendung.
 	public void shutDown() {
-		// TODO
+
 	}
-	
+
 }

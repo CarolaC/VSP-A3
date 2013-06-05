@@ -9,17 +9,24 @@ public class NameserviceStub extends Nameservice {
 	private String nameservice_host; 	 // IP des entfernten Namensdienstes
 	private int nameservice_port; 		 // Port des entfernten Namensdienstes
 	private Referenzmodul referenzmodul; // Referenzmodul (Objektreferenz -> Skeleton)
+	private int receiverPort;			 // Port des Empfaengers
 
-	public NameserviceStub(String host, int port, Referenzmodul referenzmodul) {
+	public NameserviceStub(String host, int port, Referenzmodul referenzmodul, int receiverPort) {
+		System.out.println("NameserviceStub - wird erzeugt");
 		this.nameservice_host = host;
 		this.nameservice_port = port;
 		this.referenzmodul = referenzmodul;
+		this.receiverPort = receiverPort;
 	}
 
 	@Override
 	public void rebind(Object servant, String name) {
 		try {
+			// Objektreferenz als Stringrepraesentation
 			String objRefString = "";
+			objRefString += java.net.InetAddress.getLocalHost().getHostAddress();
+			objRefString += "|" + this.receiverPort;
+			objRefString += "|" + servant.getClass();
 			
 			// erzeuge Methoden-Aufruf String
 			String request = "methode:rebind:" + objRefString + ":" + name + "\n";
