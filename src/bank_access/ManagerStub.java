@@ -49,7 +49,7 @@ public class ManagerStub extends ManagerImplBase {
 				if (receive[1].equals("RuntimeException")) {
 					throw new RuntimeException(receive[2]);
 				} else {
-					throw new RuntimeException("Unbekannter Feheler");
+					throw new RuntimeException(receive[2]);
 				}
 			default:
 				client.close();

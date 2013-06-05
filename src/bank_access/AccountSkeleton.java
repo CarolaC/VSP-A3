@@ -25,9 +25,11 @@ public class AccountSkeleton implements Skeleton {
 //					System.out.println("object.transfer("+amount+");");
 					object.transfer(amount);
 					return "return:void";
-				} catch (Exception e) {
+				} catch (OverdraftException e) {
 					return "exception:OverdraftException:" + e.getMessage();
-				} 
+				} catch (RuntimeException e) {
+					return "exception:RuntimeException:" + e.getMessage();
+				}
 			case "getBalance":
 				Double balance = object.getBalance();
 				return "return:" + balance;

@@ -321,3 +321,7 @@ AccountSkeleton - Amount: -412.0
 object.transfer(-412.0);
 ReceiverThread - remoteInvoke hat zurückgegeben exception:OverdraftException:bank-ovdE-77123
 AcceptedSocket - wird gesendet
+ObjectBroker - ObjectBroker erzeugt
+ObjectBroker - receiverManager gestartet
+Rebind NDEA...Done.
+-> Press ENTER to exit application...

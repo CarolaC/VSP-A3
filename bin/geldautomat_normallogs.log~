@@ -1,5 +1,3 @@
-ObjectBroker - ObjectBroker erzeugt
-ObjectBroker - receiverManager gestartet
 Account resolved.
 bal:77007.0
 bal...
@@ -8,17 +6,16 @@ depo...
 ...bal
 neg numbers check 1 ok
 neg numbers check 2 ok
-'bank-wdE-77123' class java.lang.RuntimeException
-'bank-wdE-77123' class java.lang.RuntimeException
+*** bank001d
+*** 'bank-wdE-77123' class cash_access.OverdraftException
 'bank-ovdE-77123' class cash_access.OverdraftException
-'branch-rte1_7011' class java.lang.RuntimeException
-'branch-rte2_7011' class java.lang.RuntimeException
+'Unbekannter Feheler' class java.lang.RuntimeException
+'branch-rte2_7011' class cash_access.OverdraftException
 'branch-ovdE_7011' class cash_access.OverdraftException
 
 Shutting down object broker...Done.
 Thread main running=true class:java.lang.Thread
+Thread Reference Handler running=true class:java.lang.ref.Reference$ReferenceHandler
 Thread Finalizer running=true class:java.lang.ref.Finalizer$FinalizerThread
 Thread Signal Dispatcher running=true class:java.lang.Thread
 Thread Thread-0 running=true class:mware_lib.Kommunikationsmodul.ReceiverManager
-Thread Reference Handler running=true class:java.lang.ref.Reference$ReferenceHandler
-

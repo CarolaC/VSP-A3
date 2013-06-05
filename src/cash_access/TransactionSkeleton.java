@@ -21,8 +21,8 @@ public class TransactionSkeleton implements Skeleton {
 //				System.out.println("TransactionSkeleton - deposit auf "+part[3]+" mit "+Double.parseDouble(part[4]));
 				try {
 					object.deposit(part[3], Double.parseDouble(part[4]));
-				} catch(Exception e) {
-					return "exception:RuntimeException:Fehler bei deposit";
+				} catch(RuntimeException e) {
+					return "exception:RuntimeException:" + e.getMessage();
 				}
 				return "return:void";
 			case "withdraw":
@@ -30,8 +30,10 @@ public class TransactionSkeleton implements Skeleton {
 					object.withdraw(part[3], Double.parseDouble(part[4]));
 				} catch (NumberFormatException e) {
 					return "exception:RuntimeException:Konnte String nicht in ein Double parsen.";
-				} catch (Exception e) {
+				} catch (OverdraftException e) {
 					return "exception:OverdraftException:" + e.getMessage();
+				} catch(RuntimeException e) {
+					return "exception:RuntimeException:"+ e.getMessage();
 				}
 				return "return:void";
 			case "getBalance":

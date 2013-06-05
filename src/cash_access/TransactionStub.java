@@ -50,7 +50,7 @@ public class TransactionStub extends TransactionImplBase {
 				if (receive[2].equals("RuntimeException")) {
 					throw new RuntimeException(receive[2]);
 				} else {
-					throw new RuntimeException("Unbekannter Feheler");
+					throw new RuntimeException(receive[2]);
 				}
 			default:
 				client.close();
@@ -100,7 +100,7 @@ public class TransactionStub extends TransactionImplBase {
 				} else if (receive[1].equals("OverdraftException")) {
 					throw new OverdraftException(receive[2]);
 				} else {
-					throw new RuntimeException("Unbekannter Feheler");
+					throw new RuntimeException(receive[2]);
 				}
 			default:
 				sender.close();
@@ -120,12 +120,12 @@ public class TransactionStub extends TransactionImplBase {
 	public double getBalance(String accountID) {
 		try {
 			// Senden des Methodenaufrufs
-			System.out.println("TransactionStub - getBalance wurde aufgerufen mit " + accountID);
+//			System.out.println("TransactionStub - getBalance wurde aufgerufen mit " + accountID);
 			Client sender = new Client(this.ip, this.port);
 			sender.send("method:" + this.objRef + ":getBalance:" + accountID + "\n");
 
 			String receive[] = sender.receive().split(":");
-			System.out.println("TransactionStub - Antwort auf getBalance: " + Arrays.toString(receive));
+//			System.out.println("TransactionStub - Antwort auf getBalance: " + Arrays.toString(receive));
 			
 			switch (receive[0]) {
 			case "return":
@@ -141,7 +141,7 @@ public class TransactionStub extends TransactionImplBase {
 				if (receive[1].equals("RuntimeException")) {
 					throw new RuntimeException(receive[2]);
 				} else {
-					throw new RuntimeException("Unbekannter Feheler");
+					throw new RuntimeException(receive[2]);
 				}
 			default:
 				sender.close();
