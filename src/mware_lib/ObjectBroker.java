@@ -71,8 +71,7 @@ public class ObjectBroker {
 				this.receiverManager.shutDownServer();
 				this.receiverManager.join();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("Alle Sockets beendet.");
 			}
 		} catch (IOException e) {
 			System.out.println("ObjectBroker - receiverManager Socket geschlossen");
