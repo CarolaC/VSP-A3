@@ -30,20 +30,21 @@ public class NameserviceStub extends NameService {
 			objRefString += java.net.InetAddress.getLocalHost().getHostAddress();
 			objRefString += ";" + this.receiverPort;
 			objRefString += ";" + servant.getClass();
+			objRefString += ";" + servant.hashCode();
 			
-//			System.out.println("Referenzstring erzeugt: " + objRefString);
+//			System.out.println("NameserviceStub - Referenzstring erzeugt: " + objRefString);
 			// erzeuge Methoden-Aufruf String
 			String request = "method:rebind:" + objRefString + ":" + name + "\n";
 			// neuen Sender erzeugen
 			Client client = new Client(this.nameservice_host,
 					this.nameservice_port);
-//			System.out.println("Neuen Client erzeugt mit Port " + this.nameservice_port);
+//			System.out.println("NameserviceStub - Neuen Client erzeugt mit Port " + this.nameservice_port);
 			// String absenden
-//			System.out.println("Sende Client folgenden String: " + request);
+//			System.out.println("NameserviceStub - Sende Client folgenden String: " + request);
 			client.send(request);
 						
 			String answer = client.receive();
-//			System.out.println("Folgende Antwort erhalten: " + answer);
+//			System.out.println("NameserviceStub - Folgende Antwort erhalten: " + answer);
 			String[] blocks = answer.split(":");
 			
 			switch (blocks[0]) {
@@ -54,8 +55,9 @@ public class NameserviceStub extends NameService {
 				if (blocks[1].equals("void")) {
 
 					// Skeleton zur Objektreferenz im Referenzmodul eintragen
-					this.referenzmodul.putSkeleton(objRefString, ((IImplBase)servant).getSkeleton());	
-//					System.out.println("Skeleton erzeugt zu Objektreferenz");
+					Skeleton skeleton = ((IImplBase)servant).getSkeleton();
+					this.referenzmodul.putSkeleton(objRefString, skeleton);	
+//					System.out.println("NameserviceStub - Skeleton " + skeleton + " erzeugt zu Objektreferenz");
 					
 					return;
 				} else {
@@ -100,7 +102,7 @@ public class NameserviceStub extends NameService {
 			String string = client.receive();
 //			System.out.println("NameserviceStub - habe folgenden String erhalten: " + string);
 			String[] blocks = string.split(":");
-//			System.out.println("String aufgeteilt in " + Arrays.toString(blocks));
+//			System.out.println("NameserviceStub - String aufgeteilt in " + Arrays.toString(blocks));
 			switch (blocks[0]) {
 			case "return":
 				// Beende die Verbindung
