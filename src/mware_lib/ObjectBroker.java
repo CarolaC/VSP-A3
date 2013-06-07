@@ -40,22 +40,24 @@ public class ObjectBroker {
 	// startet beliebig viele ReceiverThread
 	public void startManager() {
 		try {
-			this.port = port + (int)(Math.random()*10000);
+			this.port = port + (int) (Math.random() * 10000);
 			Server server = new Server(this.port);
 			this.receiverManager = new ReceiverManager(server, this);
 			this.receiverManager.start();
-//			System.out.println("ReceiverManager lauscht auf Port " + port);
+			// System.out.println("ReceiverManager lauscht auf Port " + port);
 		} catch (IOException e) {
 			port++;
-//			System.out.println("ReceiverManager wird neu gestartet. Lauscht auf Port " + port);
+			// System.out.println("ReceiverManager wird neu gestartet. Lauscht auf Port "
+			// + port);
 			startManager();
 		}
 	}
 
 	// Liefert den Namensdienst (Stellvetreterobjekt).
 	public NameService getNameService() {
-//		System.out.println("ObjectBroker - getNameservice aufgerufen");
-		return (ns == null ? new NameserviceStub(serviceHost, listenPort, referenzmodul,port) : ns);
+		// System.out.println("ObjectBroker - getNameservice aufgerufen");
+		return (ns == null ? new NameserviceStub(serviceHost, listenPort,
+				referenzmodul, port) : ns);
 	}
 
 	public Referenzmodul getReferenzmodul() {
@@ -66,13 +68,11 @@ public class ObjectBroker {
 	public void shutDown() {
 		System.out.println("ObjectBroker - Shutdown");
 		try {
-			try {
-				this.receiverManager.interrupt();
-				this.receiverManager.shutDownServer();
-				this.receiverManager.join();
-			} catch (InterruptedException e) {
-				System.out.println("Alle Sockets beendet.");
-			}
+			this.receiverManager.interrupt();
+			this.receiverManager.shutDownServer();
+			this.receiverManager.join();
+		} catch (InterruptedException e) {
+			System.out.println("ObjectBroker - Alle Sockets beendet.");
 		} catch (IOException e) {
 			System.out.println("ObjectBroker - receiverManager Socket geschlossen");
 		}

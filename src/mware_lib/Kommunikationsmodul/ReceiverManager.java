@@ -31,7 +31,7 @@ public class ReceiverManager extends Thread {
 				// + socket);
 				thread.start();
 				this.addReceiverThread(thread);
-				this.removeInactiveThreads();
+				this.removeNotRunningThreads();
 			} catch (IOException ex) {
 				if (!ex.getMessage().equals("socket closed")) {
 					System.out
@@ -44,12 +44,12 @@ public class ReceiverManager extends Thread {
 		closeAllThreads();
 	}
 
-	private synchronized void removeInactiveThreads() {
-		ReceiverThread threadElem;
+	private synchronized void removeNotRunningThreads() {
+		ReceiverThread rt;
 		for (int i = 0; i < receiverThreads.size(); i++) {
-			threadElem = receiverThreads.get(i);
-			if (!threadElem.isAlive()) {
-				receiverThreads.remove(threadElem);
+			rt = receiverThreads.get(i);
+			if (!rt.isAlive()) {
+				receiverThreads.remove(rt);
 			}
 		}
 	}
@@ -61,9 +61,9 @@ public class ReceiverManager extends Thread {
 				rt.shutDownSocket();
 				rt.join();
 			} catch (IOException e) {
-				System.out.println(e.getMessage());
+				System.out.println("ReceiverManager - IOException");
 			} catch (InterruptedException e) {
-				System.out.println(e.getMessage());
+				System.out.println("ReceiverManager - InterruptedException");
 			}
 		}
 	}
