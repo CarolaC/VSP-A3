@@ -28,7 +28,6 @@ public class ReceiverThread extends Thread {
 		try {
 			socket.close();
 		} catch (Exception e) {
-			//System.out.println("Socket in ReceiverThread is closed!");
 		}
 	}
 
@@ -73,7 +72,9 @@ public class ReceiverThread extends Thread {
 			socket.close();
 
 		} catch (Exception e) {
-			//System.out.println("ReceiverThread - IOException");
+			//System.out.println("ReceiverThread - Socket has been closed");
 		}
+
+		//System.out.println("ReceiverThread has finished.");
 	}
 }

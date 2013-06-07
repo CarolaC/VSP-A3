@@ -68,14 +68,14 @@ public class ObjectBroker {
 	public void shutDown() {
 		//System.out.println("ObjectBroker - Shutdown");
 		try {
-			this.receiverManager.interrupt();
+			this.receiverManager.setExit();
 			this.receiverManager.shutDownServer();
-			Thread.sleep(3000);
 			this.receiverManager.join();
+			//System.out.println("ObjectBroker has finished.");
 		} catch (InterruptedException e) {
-			//System.out.println("ObjectBroker - Alle Sockets beendet.");
+			e.printStackTrace();
 		} catch (IOException e) {
-			//System.out.println("ObjectBroker - receiverManager Socket geschlossen");
+			e.printStackTrace();
 		}
 	}
 
