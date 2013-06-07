@@ -39,12 +39,24 @@ public class ReceiverManager extends Thread {
         }
 	}
 	
-	public void shutDown() {
+	public synchronized void shutDown() {
 		for (ReceiverThread rt : this.receiverThreads) {
 			try {
-				rt.shutDownSocket();
+				try {
+					rt.shutDownSocket();
+					rt.interrupt();
+					rt.join();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			} catch (IOException e) {
+				System.out.println("ReceiverManager - Konnte Thread nicht beenden.");
 			}
 		}
+	}
+
+	public void shutDownServer() throws IOException {
+		server.shutdown();
 	}
 }
