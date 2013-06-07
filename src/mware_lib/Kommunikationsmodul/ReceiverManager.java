@@ -32,12 +32,8 @@ public class ReceiverManager extends Thread {
 				thread.start();
 				this.addReceiverThread(thread);
 				this.removeNotRunningThreads();
-			} catch (IOException ex) {
-				if (!ex.getMessage().equals("socket closed")) {
-					System.out
-							.println("ListenerThread : getConnection Fehler. Message: "
-									+ ex.getMessage());
-				}
+			} catch (IOException e) {
+				//System.out.println("ReceiverManager - Socket already closed!");
 				Thread.currentThread().interrupt();
 			}
 		}
@@ -61,9 +57,9 @@ public class ReceiverManager extends Thread {
 				rt.shutDownSocket();
 				rt.join();
 			} catch (IOException e) {
-				System.out.println("ReceiverManager - IOException");
+				//System.out.println("ReceiverManager - IOException");
 			} catch (InterruptedException e) {
-				System.out.println("ReceiverManager - InterruptedException");
+				//System.out.println("ReceiverManager - InterruptedException");
 			}
 		}
 	}

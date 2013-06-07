@@ -66,15 +66,15 @@ public class ObjectBroker {
 
 	// Beendet die Benutzung der Middleware in dieser Anwendung.
 	public void shutDown() {
-		System.out.println("ObjectBroker - Shutdown");
+		//System.out.println("ObjectBroker - Shutdown");
 		try {
 			this.receiverManager.interrupt();
 			this.receiverManager.shutDownServer();
 			this.receiverManager.join();
 		} catch (InterruptedException e) {
-			System.out.println("ObjectBroker - Alle Sockets beendet.");
+			//System.out.println("ObjectBroker - Alle Sockets beendet.");
 		} catch (IOException e) {
-			System.out.println("ObjectBroker - receiverManager Socket geschlossen");
+			//System.out.println("ObjectBroker - receiverManager Socket geschlossen");
 		}
 	}
 

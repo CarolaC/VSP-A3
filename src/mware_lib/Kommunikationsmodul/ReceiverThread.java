@@ -28,7 +28,7 @@ public class ReceiverThread extends Thread {
 		try {
 			socket.close();
 		} catch (Exception e) {
-			System.out.println("Socket in ReceiverThread is closed!");
+			//System.out.println("Socket in ReceiverThread is closed!");
 		}
 	}
 
@@ -40,7 +40,7 @@ public class ReceiverThread extends Thread {
 			try {
 				message = socket.receive();
 			} catch (Exception e) {
-				System.out.println("Socket in ReceiverThread is already closed!");
+				//System.out.println("Socket in ReceiverThread is already closed!");
 			}
 			if (message != null) {
 				// System.out.println("ReceiverThread - message angekommen: " +
@@ -79,11 +79,11 @@ public class ReceiverThread extends Thread {
 			socket.close();
 			}
 			catch (Exception e) {
-				System.out.println("ReceiverThread - Socket is already closed!");
+				//System.out.println("ReceiverThread - Socket is already closed!");
 			}
 
 		} catch (IOException e) {
-			System.out.println("ReceiverThread - IOException");
+			//System.out.println("ReceiverThread - IOException");
 		}
 	}
 }

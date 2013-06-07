@@ -20,10 +20,9 @@ public class Server {
 	public AcceptedSocket accept() throws IOException {
 		AcceptedSocket ac = null;
 		try {
-			if (!serverSocket.isClosed())
-				ac = new AcceptedSocket(serverSocket.accept());
+			ac = new AcceptedSocket(serverSocket.accept());
 		} catch (Exception e) {
-			System.out.println("Serversocket is closed!");
+			//System.out.println("Serversocket is closed!");
 		}
 		return ac;
 	}
@@ -32,7 +31,7 @@ public class Server {
 		try {
 		serverSocket.close();
 		} catch (Exception e) {
-			System.out.println("Serversocket closed");
+			//System.out.println("Serversocket closed");
 		}
 	}
 
