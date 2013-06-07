@@ -70,6 +70,7 @@ public class ObjectBroker {
 		try {
 			this.receiverManager.interrupt();
 			this.receiverManager.shutDownServer();
+			Thread.sleep(3000);
 			this.receiverManager.join();
 		} catch (InterruptedException e) {
 			//System.out.println("ObjectBroker - Alle Sockets beendet.");

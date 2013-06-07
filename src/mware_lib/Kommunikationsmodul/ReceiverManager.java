@@ -32,7 +32,7 @@ public class ReceiverManager extends Thread {
 				thread.start();
 				this.addReceiverThread(thread);
 				this.removeNotRunningThreads();
-			} catch (IOException e) {
+			} catch (Exception e) {
 				//System.out.println("ReceiverManager - Socket already closed!");
 				Thread.currentThread().interrupt();
 			}
